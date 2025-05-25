@@ -15,8 +15,61 @@ public class pattern2 {
         // i_h_PyramidNumber(totalRows);
         // floydTriangle(totalRows);
         // O_1_triangle(totalRows);
-        butterFly(totalRows);
+        // butterFly(totalRows);
+        // solidRhombus(totalRows);
+        // h_s_Rohmbus(totalRows);
+        diamond(totalRows);
 
+    }
+
+    public static void diamond(int totalRows) {
+        for (int i = 1; i <= totalRows; i++) {
+            for (int j = 1; j <= totalRows - i + 1; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * (i - 1) + 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        for (int i = totalRows; i >= 1; i--) {
+            for (int j = 1; j <= totalRows - i + 1; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * (i - 1) + 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void h_s_Rohmbus(int totalRows) {
+        for (int i = 1; i <= totalRows; i++) {
+            for (int j = 1; j <= (totalRows - i); j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= totalRows; j++) {
+                if (i == 1 || i == totalRows || j == 1 || j == totalRows) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void solidRhombus(int totalRows) {
+        for (int i = 1; i <= totalRows; i++) {
+            for (int j = 1; j <= (totalRows - i); j++) {
+                System.out.print("  ");
+            }
+            for (int j = 1; j <= totalRows; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
     }
 
     public static void butterFly(int totalRows) {
@@ -32,7 +85,6 @@ public class pattern2 {
             }
             System.out.println();
         }
-
         for (int i = totalRows; i >= 1; i--) {
             for (int j = 1; j <= i; j++) {
                 System.out.print("* ");
