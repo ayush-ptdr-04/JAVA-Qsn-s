@@ -24,7 +24,7 @@ public class pattern2 {
 
     public static void diamond(int totalRows) {
         for (int i = 1; i <= totalRows; i++) {
-            for (int j = 1; j <= totalRows - i + 1; j++) {
+            for (int j = 1; j <= totalRows - i; j++) {
                 System.out.print(" ");
             }
             for (int j = 1; j <= 2 * (i - 1) + 1; j++) {
@@ -34,7 +34,7 @@ public class pattern2 {
         }
 
         for (int i = totalRows; i >= 1; i--) {
-            for (int j = 1; j <= totalRows - i + 1; j++) {
+            for (int j = 1; j <= totalRows - i; j++) {
                 System.out.print(" ");
             }
             for (int j = 1; j <= 2 * (i - 1) + 1; j++) {
