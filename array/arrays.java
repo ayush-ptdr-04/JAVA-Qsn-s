@@ -24,38 +24,38 @@
  * }
  */
 
-/* print sub-arrays */
-
+/* print max-subArrays-sum(Prfix array) */
 public class arrays {
 
     public static void main(String args[]) {
-        int arr[] = { 0, 2, 4, 5, 6 };
-        subArray(arr);
+        int arr[] = { 1, 2, 3, 4 };
+        sumOfSubArray(arr);
     }
 
-    public static void subArray(int arr[]) {
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < arr.length; i++) {
-            int start = i, end = i;
-            for (int j = i; j < arr.length; j++) {
-                int sum = 0;
-                for (int k = start; k <= end; k++) {
-                    sum = sum + arr[k];
-                }
+    public static void sumOfSubArray(int arr[]) {
+        int currSum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        int prefix[] = new int[arr.length];
 
-                if (max < sum) {
-                    max = sum;
-                }
-                if (min > sum) {
-                    min = sum;
-                }
-                System.out.print(sum + ", ");
-                end++;
-            }
-            System.out.println();
+        prefix[0] = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            prefix[i] = prefix[i - 1] + arr[i];
+            System.out.print(prefix[i] + ", ");
         }
-        System.out.println("Max sum of num is: " + max);
-        System.out.println("Min sum of num is: " + min);
+
+        for (int i = 0; i < arr.length; i++) {
+            int start = i;
+            for (int j = i; j < arr.length; j++) {
+                int end = j;
+                currSum = start == 0 ? prefix[end] : prefix[end] - prefix[start - 1];
+                if (maxSum < currSum) {
+                    maxSum = currSum;
+                }
+            }
+        }
+
+        System.out.println("max sum is: " + maxSum);
+
     }
 }
