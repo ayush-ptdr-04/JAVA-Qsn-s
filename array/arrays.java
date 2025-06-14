@@ -78,30 +78,74 @@
  * }
  */
 
-public class arrays {
+/*
+ * contain most water 11.
+ * public class arrays {
+ * 
+ * public static void main(String args[]) {
+ * int height[] = { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+ * System.out.println(container(height));
+ * }
+ * 
+ * // in this logic we can reduce time and space complexity
+ * public static int container(int height[]) {
+ * int n = height.length;
+ * int maxArea = 0;
+ * 
+ * // initial values
+ * int start = 0;
+ * int end = n - 1;
+ * while (start < end) {
+ * int h = Math.min(height[start], height[end]);
+ * int w = end - start;
+ * int currArea = h * w;
+ * maxArea = Math.max(maxArea, currArea);
+ * 
+ * if (height[start] < height[end]) {
+ * start++;
+ * } else {
+ * end--;
+ * }
+ * 
+ * }
+ * 
+ * return maxArea;
+ * }
+ * }
+ */
 
+/* 1. two sum */
+public class arrays {
     public static void main(String args[]) {
-        int height[] = { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
-        System.out.println(maxArea(height));
+        int nums[] = { 0, 6, 9, 10, 17, 18 };
+        int target = 16;
+        int result[] = indicesNums(nums, target);
+        if (result.length == 3) {
+            System.out.println("[" + result[0] + ", " + result[1] + ", " + result[2] + "]");
+        } else {
+            System.out.println("No such triplet found.");
+        }
     }
 
-    public static int maxArea(int height[]) {
-        int n = height.length;
-        int mostWater = Integer.MIN_VALUE;
+    public static int[] indicesNums(int nums[], int target) {
+        for (int i = 0; i < nums.length; i++) {
 
-        for (int i = 0; i < n; i++) {
-            int count = 1;
-            for (int j = i + 1; j < n; j++) {
-                int water = Math.min(height[i], height[j]);
-                if (water != 0) {
-                    int unitsWater = water * count;
-                    mostWater = Math.max(mostWater, unitsWater);
+            int start = 0;
+            int end = nums.length - 1;
+            int ans = target - nums[i];
+
+            while (start < end) {
+                int addTwoNums = nums[start] + nums[end];
+                if (addTwoNums == ans) {
+                    return new int[] { i, start, end };
+                } else if (addTwoNums < ans) {
+                    start++;
+                } else {
+                    end--;
                 }
-                count++;
             }
+
         }
-
-        return mostWater;
-
+        return new int[] {};
     }
 }
