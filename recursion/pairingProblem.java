@@ -8,6 +8,9 @@ public class pairingProblem {
             return n;
         }
 
-        return frndsPairing(n-1)+n-1*frndsPairing(n-2);
+        int fnm1 = frndsPairing(n-1);
+        int fnm2 = frndsPairing(n-2);
+        int waysPairs = (n-1)*fnm2;
+        return fnm1+waysPairs;
     }
 }
