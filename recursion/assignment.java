@@ -3,14 +3,16 @@ public class assignment {
         int arr[] = { 3, 2, 4, 5, 6, 2, 7, 2, 2 };
         // getOcurrance(2, 0, arr);
         // strOfEng(2019);
-System.out.println(findLength("aayushAditor"));
+        // System.out.println(findLength("aayushAditor"));
+        String str = "aba";
+        contiguousString(str, 0, str.length() - 1, 0);
     }
 
     public static int findLength(String str) {
-        if (str.length()==0) {
+        if (str.length() == 0) {
             return 0;
         }
-        return findLength(str.substring(1))+1;
+        return findLength(str.substring(1)) + 1;
     }
 
     public static void strOfEng(int n) {
