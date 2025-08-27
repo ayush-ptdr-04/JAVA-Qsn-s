@@ -6,13 +6,14 @@ import java.util.Collections;
 
 public class sorting {
     public static void main(String args[]) {
-        Integer arr[] = { 3, 6, 2, 1, 8, 7, 4, 5, 3, 1 };
+        // Integer arr[] = { 3, 6, 2, 1, 8, 7, 4, 5, 3, 1 };
+        int arr[] = { 3, 6, 2, 1, 8, 7, 4, 5, 3, 1 };
         // bubbleSort(arr);
-        // selectionSort(arr);
+        selectionSort(arr);
         // insertionSort(arr);
         // countingSort(arr);
-        Arrays.sort(arr, 0, 5, Collections.reverseOrder());
-        printArr(arr);
+        // Arrays.sort(arr, 0, 5, Collections.reverseOrder());
+        // printArr(arr);
 
     }
 
@@ -74,9 +75,8 @@ public class sorting {
     }
 
     public static void bubbleSort(int arr[]) {
-        int n = arr.length;
-        for (int turn = 0; turn < n - 1; turn++) {
-            for (int j = turn + 1; j < n - 1 - turn; j++) {
+        for (int turn = 0; turn < arr.length - 1; turn++) {
+            for (int j = 0; j < arr.length - 1 - turn; j++) {
                 if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
@@ -84,5 +84,9 @@ public class sorting {
                 }
             }
         }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + ", ");
+        }
+
     }
 }

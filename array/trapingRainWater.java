@@ -5,6 +5,7 @@ public class trapingRainWater {
     }
 
     public static int trappingRainWater(int height[]) {
+
         int n = height.length;
         int leftMax[] = new int[height.length];
         int rightMax[] = new int[height.length];

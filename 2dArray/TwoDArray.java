@@ -3,8 +3,8 @@ import java.util.*;
 
 public class TwoDArray {
 
-    /*
-     * public static void main(String args[]) {
+    *
+    public static void main(String args[]) {
      * Scanner sc = new Scanner(System.in);
      * int matrics[][] = new int[3][3];
      * int n = matrics.length, m = matrics[0].length;
@@ -24,10 +24,10 @@ public class TwoDArray {
      * // int largest = largest(matrics, 4);
      * // System.out.println(searchLargestIndex(matrics, largest) + "," + largest);
      * 
-     * }
-     * 
-     * // Find largest Element
-     * public static boolean searchLargestIndex(int matrics[][], int largest) {
+     * }** // Find largest Element
+    *
+
+    public static boolean searchLargestIndex(int matrics[][], int largest) {
      * for (int i = 0; i < matrics.length; i++) {
      * for (int j = 0; j < matrics[0].length; j++) {
      * if (matrics[i][j] == largest) {
@@ -37,10 +37,10 @@ public class TwoDArray {
      * }
      * }
      * return false;
-     * }
-     * 
-     * // Find Indexes of largest Element
-     * public static int largest(int matrics[][], int key) {
+     * }** // Find Indexes of largest Element
+    *
+
+    public static int largest(int matrics[][], int key) {
      * int largest = Integer.MIN_VALUE;
      * for (int i = 0; i < matrics.length; i++) {
      * for (int j = 0; j < matrics[0].length; j++) {
@@ -50,7 +50,6 @@ public class TwoDArray {
      * 
      * return largest;
      * }
-     */
 
     public static void main(String args[]) {
         int matrix[][] = { { 1, 2, 3, 4 },

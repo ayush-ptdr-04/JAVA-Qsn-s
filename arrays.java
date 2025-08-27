@@ -1,22 +1,46 @@
+import java.util.*;
+
 public class arrays {
+
     public static void main(String args[]) {
-        int nums[] = { 3, 2, 3 };
-        System.out.println(majorityElement(nums));
+        String str = "i am aayush";
+        System.out.println(firstLetterUpperCase(str));
     }
 
-    public static int majorityElement(int nums[]) {
-        int majority = nums.length / 2;
-        for (int i = 0; i < nums.length; i++) {
-            int count = 0;
-            for (int j = 0; j < nums.length; j++) {
-                if (nums[i] == nums[j]) {
-                    count++;
-                }
-            }
-            if (count > majority) {
-                return nums[i];
+    public static String firstLetterUpperCase(String str) {
+        StringBuilder newStr = new StringBuilder("");
+        char ch = Character.toUpperCase(str.charAt(0));
+        newStr.append(ch);
+        for (int i = 1; i < str.length(); i++) {
+            if (str.charAt(i) == ' ' && i < str.length() - 1) {
+                // in this condition: Kya current character space (' ') hai? &&
+                // space ke baad ek aur character exist karta hai?.
+                newStr.append(str.charAt(i));
+                i++;
+                newStr.append(Character.toUpperCase(str.charAt(i)));
+            } else {
+                newStr.append(str.charAt(i));
             }
         }
-        return 0;
+
+        return newStr.toString();
+    }
+
+    public static void findMissingAndRepeated(int nums[][]) {
+        int row = nums.length;
+        int col = nums[0].length;
+        int n2 = Integer.MIN_VALUE;
+        int missing = 0;
+
+        for (int i = 0; i < row; i++) {
+            int value = 1;
+            for (int j = 0; j < col; j++) {
+                if (nums[i][j] != value) {
+                    missing = value;
+                }
+            }
+            value++;
+        }
+        System.out.println(missing);
     }
 }
